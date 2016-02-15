@@ -1,0 +1,22 @@
+== PARTYFREAK
+
+A basic Rails application with various third party auth implemented.
+Built on Device[https://github.com/plataformatec/devise], you can presently auth a user with the following systems
+
+*Google*
+
+*Facebook*
+
+*Github*
+
+*LinkedIn*
+
+*DropBox*
+
+The database is postgres and it is compatible with haml. Make sure to update required credentials in the following config files.
+config/environment/<env>
+config/initializers/devise.rb
+
+=== Contributing 
+
+Feel free to add another third party auth, as you desire. You can clone the repo and make a pull request.

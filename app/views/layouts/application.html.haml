@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ThirdpartyFreak
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = yield
+    - if user_signed_in?
+      %li
+      = link_to('Logout', destroy_user_session_path, :method => :delete)
+    - else
+      %li
+      = link_to('facebook', '/users/auth/facebook')
+      = link_to('linkedin', '/users/auth/linkedin')
+      = link_to('google', '/users/auth/google_oauth2')
+      = link_to('github', '/users/auth/github')
+      = link_to('dropbox', '/users/auth/dropbox')
